@@ -1,0 +1,11 @@
+.container {
+  margin-top: 30px;
+}
+
+.odd {
+  color: rgb(39, 235, 39);
+}
+
+.even{
+  color: blueviolet; 
+}

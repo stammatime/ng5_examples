@@ -1,0 +1,8 @@
+<button class="btn btn-success" (click)="startGame()">Start Game</button>
+<button class="btn btn-danger" (click)="endGame()">End Game</button>
+
+<p *ngIf="gameOn">Score: {{tickNum}}</p>
+<p *ngIf="!gameOn">Game is off</p>
+
+<!-- <app-even *ngIf="tickNum % 2 === 0">Even - {{tickNum}}</app-even> -->
+<!-- <app-odd *ngIf="tickNum % 2 === 1" [score] = "tickNum"></app-odd> -->
