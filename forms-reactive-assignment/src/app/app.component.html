@@ -14,6 +14,29 @@
 
           Upon submitting the form, simply print the value to the console
       -->
+      <form [formGroup]="reactiveForm">
+
+        <div>
+          <label for="projectName">Project Name</label>
+          <input formControlName="projectName" type="text">
+        </div>
+        <div>
+          <label for="email">email</label>
+          <input formControlName="email" type="text">
+        </div>
+        <div>
+          <label for="status">status</label>
+          <select formControlName="status" >
+            <option *ngFor="let statusOption of statusOptions" [value]="statusOption">
+            {{statusOption}}</option>
+          </select>
+        </div>
+        <button (click)="onSubmit()">Submit</button>
+      </form>
     </div>
   </div>
+</div>
+<div>
+  <p>Form value: {{ reactiveForm.value | json }}</p>
+  <p>Form valid: {{ reactiveForm.valid}}</p>
 </div>
