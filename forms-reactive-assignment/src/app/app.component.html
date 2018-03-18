@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <!--
+          Create a Form with the following Controls and Validators
+          1) Project Name (should not be empty)
+          2) Mail (should not be a empty and a valid email)
+          3) Project Status Dropdown, with three values: 'Stable', 'Critical', 'Finished'
+          4) Submit Button
+
+          Add your own Validator which doesn't allow "Test" as a Project Name
+
+          Also implement that Validator as an async Validator (replace the other one)
+
+          Upon submitting the form, simply print the value to the console
+      -->
+      <form [formGroup]="reactiveForm">
+
+        <div>
+          <label for="projectName">Project Name</label>
+          <input formControlName="projectName" type="text">
+        </div>
+        <div>
+          <label for="email">email</label>
+          <input formControlName="email" type="text">
+        </div>
+        <div>
+          <label for="status">status</label>
+          <select formControlName="status" >
+            <option *ngFor="let statusOption of statusOptions" [value]="statusOption">
+            {{statusOption}}</option>
+          </select>
+        </div>
+        <button (click)="onSubmit()">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+<div>
+  <p>Form value: {{ reactiveForm.value | json }}</p>
+  <p>Form valid: {{ reactiveForm.valid}}</p>
+</div>
